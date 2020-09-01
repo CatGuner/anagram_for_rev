@@ -1,15 +1,19 @@
 package com.danila.anagram.service;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+@Service
 public class AnagramChecking {
-    public static HashMap<String, String> compereWithWord(String word, ArrayList<String> inputData){
-        HashMap<String, String> data = new HashMap<>();
+    public Map<String, Boolean> compereWithWord(String word, List<String> inputData){
+        Map<String, Boolean> data = new HashMap<>();
         for (String item : inputData){
-            String status = "no";
+            boolean status = false;
             if (new StringBuilder(word.replace(" ", "")).reverse().toString().equals(item.replace(" ", ""))){
-                status = "yes";
+                status = true;
             }
             data.put(item, status);
         }

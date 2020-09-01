@@ -1,24 +1,18 @@
 package com.danila.anagram.model;
 
+import lombok.*;
+import lombok.experimental.FieldDefaults;
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 
+@Data
+@FieldDefaults(level = AccessLevel.PRIVATE)
+@NoArgsConstructor
+@AllArgsConstructor
+@Component
 public class InputData {
-    private String word;
-    private ArrayList<String> wordsForCompare;
 
-    public InputData() {
-    }
-
-    public InputData(String word, ArrayList<String> wordsForCompare) {
-        this.word = word;
-        this.wordsForCompare = wordsForCompare;
-    }
-
-    public String getWord() {
-        return word;
-    }
-
-    public ArrayList<String> getWordsForCompare() {
-        return wordsForCompare;
-    }
+    String word;
+    ArrayList<String> wordsForCompare;
 }
